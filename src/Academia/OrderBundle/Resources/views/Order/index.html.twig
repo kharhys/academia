@@ -1,6 +1,14 @@
 {% extends '::base.html.twig' %}
 
+
+
 {% block body -%}
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div class="flash-notice">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
     <h1>Order list</h1>
 
     <table class="records_list">

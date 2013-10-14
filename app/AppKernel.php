@@ -22,6 +22,7 @@ class AppKernel extends Kernel
 
             new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
             new Vich\UploaderBundle\VichUploaderBundle(),
+            new Sensio\Bundle\BuzzBundle\SensioBuzzBundle(),
 
             new Academia\FrameworkBundle\AcademiaFrameworkBundle(),
             new Academia\OrderBundle\AcademiaOrderBundle(),

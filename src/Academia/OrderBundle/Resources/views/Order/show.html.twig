@@ -61,6 +61,11 @@
             Edit
         </a>
     </li>
+            {% if entity.paid %}
+                <li>Paid!</li>
+            {% else %}
+                <li>{{ form(pay_form) }}</li>
+            {% endif %}
     <li>{{ form(delete_form) }}</li>
 </ul>
 {% endblock %}

@@ -9,17 +9,21 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Academia\OrderBundle\Entity\Order;
 use Academia\OrderBundle\Form\OrderType;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use Symfony\Component\Security\Acl\Domain\ObjectIdentity;
+use Symfony\Component\Security\Acl\Domain\UserSecurityIdentity;
+use Symfony\Component\Security\Acl\Permission\MaskBuilder;
 
 /**
  * Order controller.
  *
- * @Route("/u")
+ * @Route("/user")
  */
 class OrderController extends Controller
 {
 
     /**
-     * Lists all Order entities.
+     * Lists all Order entities for logged in user.
      *
      * @Route("/", name="u_")
      * @Method("GET")
@@ -29,7 +33,7 @@ class OrderController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('AcademiaOrderBundle:Order')->findAll();
+        $entities = $em->getRepository('AcademiaOrderBundle:Order')->findBy( array('user' => $this->getUser()->getId() ) );
 
         return array(
             'entities' => $entities,
@@ -44,14 +48,30 @@ class OrderController extends Controller
      */
     public function createAction(Request $request)
     {
+        /** @var \Academia\OrderBundle\Entity\Order $entity */
         $entity = new Order();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
         if ($form->isValid()) {
+            $entity->setUser($this->getUser());
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
             $em->flush();
+
+            // creating the ACL
+            $aclProvider = $this->get('security.acl.provider');
+            $objectIdentity = ObjectIdentity::fromDomainObject($entity);
+            $acl = $aclProvider->createAcl($objectIdentity);
+
+            // retrieving the security identity of the currently logged-in user
+            $securityContext = $this->get('security.context');
+            $user = $securityContext->getToken()->getUser();
+            $securityIdentity = UserSecurityIdentity::fromAccount($user);
+
+            // grant owner access
+            $acl->insertObjectAce($securityIdentity, MaskBuilder::MASK_OWNER);
+            $aclProvider->updateAcl($acl);
 
             return $this->redirect($this->generateUrl('u__show', array('id' => $entity->getId())));
         }
@@ -116,11 +136,20 @@ class OrderController extends Controller
             throw $this->createNotFoundException('Unable to find Order entity.');
         }
 
+        $securityContext = $this->get('security.context');
+
+        // check for edit access
+        if (false === $securityContext->isGranted('VIEW', $entity)) {
+            throw new AccessDeniedException();
+        }
+
         $deleteForm = $this->createDeleteForm($id);
+        $payForm = $this->createPayForm($id);
 
         return array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
+            'pay_form'    => $payForm->createView(),
         );
     }
 
@@ -139,6 +168,13 @@ class OrderController extends Controller
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Order entity.');
+        }
+
+        $securityContext = $this->get('security.context');
+
+        // check for edit access
+        if (false === $securityContext->isGranted('EDIT', $entity)) {
+            throw new AccessDeniedException();
         }
 
         $editForm = $this->createEditForm($entity);
@@ -221,6 +257,13 @@ class OrderController extends Controller
                 throw $this->createNotFoundException('Unable to find Order entity.');
             }
 
+            $securityContext = $this->get('security.context');
+
+            // check for edit access
+            if (false === $securityContext->isGranted('DELETE', $entity)) {
+                throw new AccessDeniedException();
+            }
+
             $em->remove($entity);
             $em->flush();
         }
@@ -244,4 +287,16 @@ class OrderController extends Controller
             ->getForm()
         ;
     }
+
+    private function createPayForm($id)
+    {
+        return $this->createFormBuilder()
+            ->setAction($this->generateUrl('academia_order_payment_setExpressCheckout', array('id' => $id)))
+            ->setMethod('POST')
+            ->add('submit', 'submit', array('label' => 'Pay For This Order'))
+            ->getForm()
+        ;
+    }
+
+
 }

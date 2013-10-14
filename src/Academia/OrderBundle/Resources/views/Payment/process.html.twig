@@ -1,0 +1,14 @@
+<html>
+<head>
+    <title>PayPal - Digital Goods for Express Checkout Example</title>
+    <link rel="stylesheet" type="text/css" href="{{ asset( 'bundles/academiaorder/css/style.css' ) }}" />
+</head>
+<body>
+<div class="container">
+    <h2>PayPal Simple Purchase Demo</h2>
+    <p><b>Description:</b> {{ paypal.get_description }} </p>
+    <p><b>Purchase price:</b> {{ paypal.get_purchase_price }} </p>
+    {{ paypal.print_buy_button }}
+</div>
+</body>
+</html>

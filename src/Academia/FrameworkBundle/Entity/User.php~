@@ -4,10 +4,11 @@ namespace Academia\FrameworkBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="fos_user")
+ * @ORM\Table(name="academia_user")
  */
 class User extends BaseUser
 {
@@ -18,8 +19,27 @@ class User extends BaseUser
      */
     protected $id;
 
+    /**
+     * @var
+     *
+     * @ORM\OneToMany(targetEntity="Academia\OrderBundle\Entity\Order", mappedBy="user")
+     */
+    protected $orders;
+
+
     public function __construct()
     {
         parent::__construct();
+        $this->orders = new ArrayCollection();
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 }

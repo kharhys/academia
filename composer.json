@@ -25,16 +25,16 @@
         "friendsofsymfony/user-bundle": "2.0.*@dev",
         "friendsofsymfony/message-bundle": "1.2.*@dev",
 
-        "payum/payum": "0.6.*@dev",
-        "payum/payum-bundle": "0.6.*@dev",
-        "kriswallsmith/buzz": "dev-master",
-        "payum/paypal-express-checkout-nvp": "0.6.*@dev",
+        "kriswallsmith/buzz": "v0.10",
 
         "knplabs/gaufrette" : "0.2.*@dev",
         "vich/uploader-bundle": "dev-master",
         "knplabs/knp-gaufrette-bundle" : "dev-master",
 
-        "hwi/oauth-bundle": "0.3.*@dev"
+        "hwi/oauth-bundle": "0.3.*@dev",
+        "liip/imagine-bundle": "dev-master",
+        "sensio/buzz-bundle": "1.0.*@dev",
+        "stfalcon/tinymce-bundle": "0.3.*@dev"
     },
     "scripts": {
         "post-install-cmd": [

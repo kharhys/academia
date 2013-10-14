@@ -94,11 +94,35 @@ class Order
     protected $attachmentName;
 
     /**
+     * @ORM\Column(name="paypal_token", type="string", length=255, nullable=true)
+     *
+     * @var string $paypalToken
+     */
+    protected $paypalToken;
+
+    /**
+     * @ORM\Column(name="paid", type="boolean", nullable=true)
+     *
+     * @var string $attachmentName
+     */
+    protected $paid;
+
+
+    /**
+     * @var
+     *
+     * @ORM\ManyToOne("Academia\FrameworkBundle\Entity\User", inversedBy="orders")
+     * @ORM\JoinColumn(name="user", referencedColumnName="id")
+     */
+    protected $user;
+
+    /**
      * Constructor
      */
     public function __construct()
     {
         $this->orderId = sprintf('%09d', mt_rand(0, 1999999999));
+        $this->paid = false;
     }
 
 
@@ -312,5 +336,69 @@ class Order
         return $this->attachment;
     }
 
+    
 
+    /**
+     * @param string $paypalToken
+     */
+    public function setPaypalToken($paypalToken)
+    {
+        $this->paypalToken = $paypalToken;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPaypalToken()
+    {
+        return $this->paypalToken;
+    }
+
+
+
+    /**
+     * Set paid
+     *
+     * @param boolean $paid
+     * @return Order
+     */
+    public function setPaid($paid)
+    {
+        $this->paid = $paid;
+    
+        return $this;
+    }
+
+    /**
+     * Get paid
+     *
+     * @return boolean 
+     */
+    public function getPaid()
+    {
+        return $this->paid;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \Academia\FrameworkBundle\Entity\User $user
+     * @return Order
+     */
+    public function setUser(\Academia\FrameworkBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+    
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Academia\FrameworkBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 }

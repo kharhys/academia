@@ -12,6 +12,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
  *
  * @ORM\Table(name="academia_order")
  * @ORM\Entity(repositoryClass="Academia\OrderBundle\Entity\OrderRepository")
+ * @ORM\HasLifecycleCallbacks
  * @Vich\Uploadable
  */
 class Order
@@ -61,13 +62,6 @@ class Order
     protected $deadline;
 
     /**
-     * @var float
-     *
-     * @ORM\Column(name="fee", type="decimal")
-     */
-    protected $fee;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="instructions", type="text")
@@ -93,11 +87,43 @@ class Order
     protected $attachment;
 
     /**
-     * @ORM\Column(name="attachment_name", type="string", length=255)
+     * @ORM\Column(name="attachment_name", type="string", length=255, nullable=true)
      *
      * @var string $attachmentName
      */
     protected $attachmentName;
+
+    /**
+     * @ORM\Column(name="paypal_token", type="string", length=255, nullable=true)
+     *
+     * @var string $paypalToken
+     */
+    protected $paypalToken;
+
+    /**
+     * @ORM\Column(name="paid", type="boolean", nullable=true)
+     *
+     * @var string $attachmentName
+     */
+    protected $paid;
+
+
+    /**
+     * @var
+     *
+     * @ORM\ManyToOne("Academia\FrameworkBundle\Entity\User", inversedBy="orders")
+     * @ORM\JoinColumn(name="user", referencedColumnName="id")
+     */
+    protected $user;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->orderId = sprintf('%09d', mt_rand(0, 1999999999));
+        $this->paid = false;
+    }
 
 
     /**
@@ -226,29 +252,6 @@ class Order
     }
 
     /**
-     * Set fee
-     *
-     * @param float $fee
-     * @return Order
-     */
-    public function setFee($fee)
-    {
-        $this->fee = $fee;
-    
-        return $this;
-    }
-
-    /**
-     * Get fee
-     *
-     * @return float 
-     */
-    public function getFee()
-    {
-        return $this->fee;
-    }
-
-    /**
      * Set instructions
      *
      * @param string $instructions
@@ -292,5 +295,87 @@ class Order
     public function getCitation()
     {
         return $this->citation;
+    }
+
+    /**
+     * Set attachmentName
+     *
+     * @param string $attachmentName
+     * @return Order
+     */
+    public function setAttachmentName($attachmentName)
+    {
+        $this->attachmentName = $attachmentName;
+    
+        return $this;
+    }
+
+    /**
+     * Get attachmentName
+     *
+     * @return string 
+     */
+    public function getAttachmentName()
+    {
+        return $this->attachmentName;
+    }
+
+    /**
+     * @param \Symfony\Component\HttpFoundation\File\File $attachment
+     */
+    public function setAttachment($attachment)
+    {
+        $this->attachment = $attachment;
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\File\File
+     */
+    public function getAttachment()
+    {
+        return $this->attachment;
+    }
+
+    
+
+    /**
+     * @param string $paypalToken
+     */
+    public function setPaypalToken($paypalToken)
+    {
+        $this->paypalToken = $paypalToken;
+    }
+
+    /**
+     * @return string
+     */
+    public function getPaypalToken()
+    {
+        return $this->paypalToken;
+    }
+
+
+
+    /**
+     * Set paid
+     *
+     * @param boolean $paid
+     * @return Order
+     */
+    public function setPaid($paid)
+    {
+        $this->paid = $paid;
+    
+        return $this;
+    }
+
+    /**
+     * Get paid
+     *
+     * @return boolean 
+     */
+    public function getPaid()
+    {
+        return $this->paid;
     }
 }
