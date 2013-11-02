@@ -1,3 +1,4 @@
+<script>if (window!=top) {top.location.replace(document.location);}</script>
 <p>Your Transaction ID is {{ response['PAYMENTINFO_0_TRANSACTIONID'] }}</p>
 <p>You can use this Transaction ID to see the details of your subscription like so:</p>
 <pre><code> {{ dump(paypal.get_transaction_details( response['PAYMENTINFO_0_TRANSACTIONID'] )) }} </code></pre>

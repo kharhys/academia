@@ -23,9 +23,14 @@ class AppKernel extends Kernel
             new Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
             new Vich\UploaderBundle\VichUploaderBundle(),
             new Sensio\Bundle\BuzzBundle\SensioBuzzBundle(),
+            new Knp\Bundle\TimeBundle\KnpTimeBundle(),
+            new Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle(),
+            new Sonata\jQueryBundle\SonatajQueryBundle(),
+            new Sonata\MarkItUpBundle\SonataMarkItUpBundle(),
 
             new Academia\FrameworkBundle\AcademiaFrameworkBundle(),
             new Academia\OrderBundle\AcademiaOrderBundle(),
+            new Academia\LoanBundle\AcademiaLoanBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

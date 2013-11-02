@@ -1,0 +1,83 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div id="sign_up2">
+    <div class="container">
+        <div class="row login">
+            <div class="col-sm-5 left_box">
+                <h4>Create your account</h4>
+
+                <div class="perk_box">
+                    <div class="perk">
+                        <span class="icos ico1"></span>
+                        <p><strong>Lorem alteration</strong> in some form  injected humour these randomised words .</p>
+                    </div>
+                    <div class="perk">
+                        <span class="icos ico2"></span>
+                        <p><strong>There are many variations</strong> of passages of Lorem alteration in some form  injected humour these randomised words.</p>
+                    </div>
+                    <div class="perk">
+                        <span class="icos ico3"></span>
+                        <p><strong>Alteration in some form</strong> injected humour these randomised words.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 signin_box">
+                <div class="box">
+                    <div class="box_cont">
+                        <div class="social">
+                            <a href="#" class="circle facebook">
+                                <img src="{{ asset('img/face.png') }}" alt="">
+                            </a>
+                            <a href="#" class="circle twitter">
+                                <img src="{{ asset('img/twt.png') }}" alt="">
+                            </a>
+                            <a href="#" class="circle gplus">
+                                <img src="{{ asset('img/gplus.png') }}" alt="">
+                            </a>
+                        </div>
+
+                        <div class="division">
+                            <div class="line l"></div>
+                            <span>or</span>
+                            <div class="line r"></div>
+                        </div>
+
+                        <div class="form">
+                            <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+                                {{ form_errors(form.username) }}
+                                {{ form_widget(form.username, { 'attr' : { 'placeholder' : 'Username' } } ) }}
+
+                                {{ form_errors(form.email) }}
+                                {{ form_widget(form.email, { 'attr' : { 'placeholder' : 'Email' } } ) }}
+
+                                {{ form_errors(form.plainPassword.first) }}
+                                {{ form_widget(form.plainPassword.first, { 'attr' : { 'placeholder' : 'Password' } } ) }}
+
+                                {{ form_errors(form.plainPassword.second) }}
+                                {{ form_widget(form.plainPassword.second, { 'attr' : { 'placeholder' : 'Confirm Password' } } ) }}
+
+                                {{ form_rest(form) }}
+                                <div class="forgot">
+                                    <span>Already have an account?</span>
+                                    <a href="{{ path('fos_user_security_login') }}">Sign in</a>
+                                </div>
+                                <input type="submit" value="sign up">
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+<form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+    {{ form_widget(form) }}
+    <div>
+        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+    </div>
+</form>
+-->

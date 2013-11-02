@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Academia studios </title>
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link href="{{ asset('bundles/academiaframework/css/flat.css') }}"    rel="stylesheet" />
+        <link href="{{ asset('css/bootstrap.min.css') }}"    rel="stylesheet" />
+        <link href="{{ asset('bundles/academiaframework/css/layout.css') }}"  rel="stylesheet" />
+        <link href="{{ asset('bundles/academiaframework/css/signin.css') }}"  rel="stylesheet" />
+        <link href="{{ asset('bundles/academiaframework/css/signup.css') }}"  rel="stylesheet" />
+
+        <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css' />
+
+    </head>
+
+    <body class="body">
+        <div id="wrapper">
+            <!--header class="mainHeader">
+            <nav>
+                <ul>
+                    <li> <a href="#">Home</a> </li>
+                    <li> <a href="#">About</a> </li>
+                    <li> <a href="#">Contact</a> </li>
+                </ul>
+            </nav>
+        </header-->
+
+            <div class="container">
+                <div class="row">
+                    <div class="span12 text-right" id="loggedIn">
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
+                            <a href="{{ path('fos_user_security_logout') }}">
+                                {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+                            </a>
+                        {% else %}
+                            <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
+                        {% endif %}
+                    </div>
+
+                    {% for type, messages in app.session.flashbag.all() %}
+                        {% for message in messages %}
+                            <div class="flash-{{ type }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+
+                    {% block fos_user_content %}
+                    {% endblock fos_user_content %}
+                </div>
+            </div>
+
+            <div id="push"></div>
+
+        </div>
+
+        <footer class="mainFooter" id="footer">
+            <p> Copyright &copy; AcademiaStudios.com </p>
+        </footer>
+
+    </body>
+</html>

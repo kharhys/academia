@@ -34,6 +34,14 @@ class User extends BaseUser
     }
 
     /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->getUsername();
+    }
+
+    /**
      * Get id
      *
      * @return integer 

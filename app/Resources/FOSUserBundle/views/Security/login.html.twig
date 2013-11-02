@@ -1,0 +1,78 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    {% if error %}
+        <div>{{ error|trans }}</div>
+    {% endif %}
+
+
+    <div class="container" id="signIn">
+        <div class="row">
+            <div class="span12">
+                <h4>Log in to your account</h4>
+                <p>You can Sign In using your account at AcademiaStudios. Alternatively use either your facebook, twitter or google account to sign in </p>
+
+            </div>
+        </div>
+
+        <div class="row social">
+            <div class="span12 text-center">
+                <a href="#" class="circle facebook">
+                    <img src="{{ asset('img/face.png') }}" alt="">
+                </a>
+                <a href="#" class="circle twitter">
+                    <img src="{{ asset('img/twt.png') }}" alt="">
+                </a>
+                <a href="#" class="circle gplus">
+                    <img src="{{ asset('img/gplus.png') }}" alt="">
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="span12 division text-center">
+                <div class="line l"></div>
+                <span>or</span>
+                <div class="line r"></div>
+            </div>
+        </div>
+
+        <div class="">
+            <form class="form" action="{{ path("fos_user_security_check") }}" method="post">
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+                <div class="row text-center">
+                    <div class="span3">
+                        <label for="username"></label>
+                        <input type="text"  placeholder="Username"  id="username" name="_username" value="{{ last_username }}" required="required" />
+                    </div>
+
+                    <div class="span3">
+                        <label for="password"></label>
+                        <input type="password" placeholder="Password"  id="password" name="_password" required="required" />
+                    </div>
+
+                    <div class="span5">
+                        <label for="password"></label>
+                        <input class="btn btn-primary" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="span5">
+                        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                        <label class="checkbox" for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+                        <span><a href="{{ path('fos_user_resetting_request') }}">Forgot password?</a></span>
+                    </div>
+                    <div class="span6 text-right">
+                        <span>Don’t have an account?</span>
+                        <span> <a href="{{ path('fos_user_registration_register') }}">Sign up</a> </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+{% endblock fos_user_content %}

@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+}
+html, body {
+    height: 100%;
+}
+#wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -4em;
+}
+#footer, #push {
+    height: 4em;
+
+}
+#push {
+    margin-bottom: 20px;
+}
+
+#footer {
+    height: 4em;
+    text-align: center;
+    color: #ffffff;
+    padding: 20px 0;
+    background-color: #34495e;
+}
+#loggedIn {
+    font-size: 13px;
+    padding: 50px;
+}
+

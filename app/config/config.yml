@@ -56,6 +56,8 @@ doctrine:
     orm:
         auto_generate_proxy_classes: %kernel.debug%
         auto_mapping: true
+        resolve_target_entities:
+            Cunningsoft\ChatBundle\Entity\AuthorInterface: Academia\FrameworkBundle\Entity\User
 
 # Swiftmailer Configuration
 swiftmailer:
@@ -90,3 +92,14 @@ vich_uploader:
             uri_prefix: /uploads/order
             upload_destination: order_attachment_fs
             namer: vich_uploader.namer_uniqid
+
+knp_time: ~
+
+stfalcon_tinymce:
+    include_jquery: true
+    tinymce_jquery: true
+    selector: ".tinymce"
+    language: %locale%
+    theme:
+        simple: ~
+        

@@ -34,7 +34,10 @@
         "hwi/oauth-bundle": "0.3.*@dev",
         "liip/imagine-bundle": "dev-master",
         "sensio/buzz-bundle": "1.0.*@dev",
-        "stfalcon/tinymce-bundle": "0.3.*@dev"
+        "stfalcon/tinymce-bundle": "0.3.*@dev",
+        "knplabs/knp-time-bundle": "1.1.*@dev",
+        "sonata-project/jquery-bundle": "1.9.*@dev",
+        "sonata-project/markitup-bundle": "2.1.*@dev"
     },
     "scripts": {
         "post-install-cmd": [

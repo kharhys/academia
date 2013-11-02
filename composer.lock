@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "b768c1e7428db9f9b7388c9a6cee7f8a",
+    "hash": "e83e611e99f2ef41d52318c1a2a21f07",
     "packages": [
         {
             "name": "bmatzner/fontawesome-bundle",
@@ -652,65 +652,18 @@
             "time": "2013-05-11 07:51:12"
         },
         {
-            "name": "elendev/checkout-bundle",
-            "version": "dev-master",
-            "target-dir": "Elendev/CheckoutBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Elendev/ElendevCheckoutBundle.git",
-                "reference": "43f7949228cee62332c1d34776b84a60e0a05c2a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Elendev/ElendevCheckoutBundle/zipball/43f7949228cee62332c1d34776b84a60e0a05c2a",
-                "reference": "43f7949228cee62332c1d34776b84a60e0a05c2a",
-                "shasum": ""
-            },
-            "require": {
-                "symfony/framework-bundle": ">=2.1,<2.4"
-            },
-            "require-dev": {
-                "sensio/framework-extra-bundle": "*",
-                "symfony/class-loader": "*",
-                "symfony/yaml": "*"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-0": {
-                    "Elendev\\CheckoutBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache2"
-            ],
-            "authors": [
-                {
-                    "name": "Jonas Renaudot",
-                    "email": "blackcharly@elendev.com"
-                }
-            ],
-            "description": "Provide simple checkout utilities for paypal",
-            "homepage": "http://blog.elendev.com",
-            "keywords": [
-                "checkout",
-                "paypal"
-            ],
-            "time": "2013-10-02 08:06:18"
-        },
-        {
             "name": "friendsofsymfony/message-bundle",
             "version": "dev-master",
             "target-dir": "FOS/MessageBundle",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony/FOSMessageBundle.git",
-                "reference": "6a68fe5af382903c5208646f1f662b6433d006ad"
+                "reference": "7521b5c6e0f1d5bdf42b499831df35505eb49e7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSMessageBundle/zipball/6a68fe5af382903c5208646f1f662b6433d006ad",
-                "reference": "6a68fe5af382903c5208646f1f662b6433d006ad",
+                "url": "https://api.github.com/repos/FriendsOfSymfony/FOSMessageBundle/zipball/7521b5c6e0f1d5bdf42b499831df35505eb49e7a",
+                "reference": "7521b5c6e0f1d5bdf42b499831df35505eb49e7a",
                 "shasum": ""
             },
             "require": {
@@ -755,7 +708,7 @@
                 "messaging",
                 "symfony"
             ],
-            "time": "2013-10-09 22:06:13"
+            "time": "2013-10-15 22:20:08"
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -1231,6 +1184,65 @@
             "time": "2013-10-07 13:36:41"
         },
         {
+            "name": "knplabs/knp-time-bundle",
+            "version": "dev-master",
+            "target-dir": "Knp/Bundle/TimeBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KnpLabs/KnpTimeBundle.git",
+                "reference": "1e827fd499da31bf4db9e4e36c537bfe390eddba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KnpLabs/KnpTimeBundle/zipball/1e827fd499da31bf4db9e4e36c537bfe390eddba",
+                "reference": "1e827fd499da31bf4db9e4e36c537bfe390eddba",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/framework-bundle": "~2.0"
+            },
+            "suggest": {
+                "symfony/twig-bundle": "to use the Twig time_diff function"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Knp\\Bundle\\TimeBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "KnpLabs Team",
+                    "homepage": "http://knplabs.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://github.com/KnpLabs/KnpTimeBundle/contributors"
+                }
+            ],
+            "description": "Knplabs time bundle makes your dates look sensible and descriptive",
+            "homepage": "http://github.com/KnpLabs/KnpTimeBundle",
+            "keywords": [
+                "bundle",
+                "date",
+                "descriptive time",
+                "knp",
+                "knplabs",
+                "time"
+            ],
+            "time": "2013-08-26 08:38:38"
+        },
+        {
             "name": "kriswallsmith/assetic",
             "version": "v1.1.2",
             "source": {
@@ -1466,216 +1478,6 @@
             "time": "2013-07-28 22:38:30"
         },
         {
-            "name": "payum/paypal-express-checkout-nvp",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Payum/PaypalExpressCheckoutNvp.git",
-                "reference": "7aaaf140b5348a9676feb87881df5893b84b06f9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Payum/PaypalExpressCheckoutNvp/zipball/7aaaf140b5348a9676feb87881df5893b84b06f9",
-                "reference": "7aaaf140b5348a9676feb87881df5893b84b06f9",
-                "shasum": ""
-            },
-            "require": {
-                "kriswallsmith/buzz": "*",
-                "payum/payum": "0.6.x-dev",
-                "php": ">=5.3.2"
-            },
-            "require-dev": {
-                "doctrine/mongodb-odm": "~1.0@dev",
-                "doctrine/orm": ">=2.3,<2.4-dev",
-                "ext-curl": "*",
-                "ext-pdo_sqlite": "*",
-                "fp/testo": "dev-master",
-                "phpunit/phpunit": "3.7.*"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.6-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Payum\\Paypal\\ExpressCheckout\\Nvp": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kotlyar Maksim",
-                    "email": "kotlyar.maksim@gmail.com"
-                }
-            ],
-            "description": "Paypal express checkout",
-            "keywords": [
-                "digital goods",
-                "express checkout",
-                "payment",
-                "paypal",
-                "recurring payment"
-            ],
-            "time": "2013-10-10 20:10:49"
-        },
-        {
-            "name": "payum/payum",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Payum/Payum.git",
-                "reference": "057838615c8f8da364671c12b914fa2635f9232b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Payum/Payum/zipball/057838615c8f8da364671c12b914fa2635f9232b",
-                "reference": "057838615c8f8da364671c12b914fa2635f9232b",
-                "shasum": ""
-            },
-            "require": {
-                "kriswallsmith/buzz": "*",
-                "php": ">=5.3.2"
-            },
-            "require-dev": {
-                "doctrine/mongodb": "1.0.*@dev",
-                "doctrine/mongodb-odm": "1.0.*@dev",
-                "doctrine/orm": "2.*",
-                "ext-curl": "*",
-                "ext-pdo_sqlite": "*",
-                "fp/testo": "dev-master",
-                "phpunit/phpunit": "3.7.*",
-                "psr/log": "~1.0"
-            },
-            "suggest": {
-                "doctrine/mongodb-odm": "If you want to store models to mongo doctrin2 ODM",
-                "doctrine/orm": "If you want to store models to database using doctrin2 ORM",
-                "monolog/monolog": "In case you want to use logger",
-                "payum/authorize-net-aim": "If you want to use Authorize.Net AIM payment gateway",
-                "payum/be2bill": "If you want to use be2bill payment gateway",
-                "payum/omnipay-bridge": "If you want to use omnipay's gateways",
-                "payum/paypal-express-checkout-nvp": "If you want to use paypal express checkout, digital goods or recurring payments",
-                "payum/paypal-ipn": "If you want to use paypal instant payment notifications(Paypal IPN)",
-                "payum/paypal-pro-checkout-nvp": "If you want to use paypal pro checkout"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.6-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Payum": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kotlyar Maksim",
-                    "email": "kotlyar.maksim@gmail.com"
-                }
-            ],
-            "description": "Payment lib",
-            "keywords": [
-                "authorize.net",
-                "be2bill",
-                "omnipay gateways",
-                "payment",
-                "paypal",
-                "paypal digital goods",
-                "paypal ipn",
-                "paypal recurring payments"
-            ],
-            "time": "2013-10-10 20:04:39"
-        },
-        {
-            "name": "payum/payum-bundle",
-            "version": "dev-master",
-            "target-dir": "Payum/Bundle/PayumBundle",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Payum/PayumBundle.git",
-                "reference": "7f4708009c256b2dcc5dea378e8c003e61c3c09c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Payum/PayumBundle/zipball/7f4708009c256b2dcc5dea378e8c003e61c3c09c",
-                "reference": "7f4708009c256b2dcc5dea378e8c003e61c3c09c",
-                "shasum": ""
-            },
-            "require": {
-                "payum/payum": "0.6.x-dev",
-                "php": ">=5.3.2",
-                "symfony/framework-bundle": "2.*"
-            },
-            "require-dev": {
-                "doctrine/orm": "*",
-                "fp/testo": "@dev",
-                "payum/authorize-net-aim": "0.6.x-dev",
-                "payum/be2bill": "0.6.x-dev",
-                "payum/omnipay-bridge": "0.6.x-dev",
-                "payum/payex": "0.6.x-dev",
-                "payum/paypal-express-checkout-nvp": "0.6.x-dev",
-                "payum/paypal-pro-checkout-nvp": "0.6.x-dev",
-                "phpunit/phpunit": "*"
-            },
-            "suggest": {
-                "payum/authorize-net-aim": "If you want to use authorize.net gateway",
-                "payum/be2bill": "If you want to use be2bill gateway",
-                "payum/omnipay-bridge": "If you want to use omnipay provided gateways",
-                "payum/payex": "If you want to use payex gateway",
-                "payum/paypal-express-checkout-nvp": "If you want to use paypal express checkout nvp gateway",
-                "payum/paypal-pro-checkout-nvp": "If you want to use paypal pro checkout nvp gateway"
-            },
-            "type": "symfony-bundle",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "0.6-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Payum\\Bundle\\PayumBundle": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kotlyar Maksim",
-                    "email": "kotlyar.maksim@gmail.com"
-                },
-                {
-                    "name": "Community",
-                    "homepage": "https://github.com/Payum/PayumBundle/graphs/contributors"
-                }
-            ],
-            "description": "The payment bundle integrates payum libs into symfony2 framework",
-            "homepage": "https://github.com/Payum/PayumBundle",
-            "keywords": [
-                "authorize.net",
-                "be2bill",
-                "omnipay",
-                "payex",
-                "payment",
-                "paypal",
-                "paypal express checkout",
-                "paypal pro checkout",
-                "paypal recurring payment"
-            ],
-            "time": "2013-09-30 20:51:39"
-        },
-        {
             "name": "psr/log",
             "version": "1.0.0",
             "source": {
@@ -1901,6 +1703,187 @@
             ],
             "description": "This bundle generates code for you",
             "time": "2013-08-21 18:09:35"
+        },
+        {
+            "name": "sonata-project/jquery-bundle",
+            "version": "dev-master",
+            "target-dir": "Sonata/jQueryBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sonata-project/SonatajQueryBundle.git",
+                "reference": "2f0e2be2ac090365abeabf3ed08ca820df465828"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sonata-project/SonatajQueryBundle/zipball/2f0e2be2ac090365abeabf3ed08ca820df465828",
+                "reference": "2f0e2be2ac090365abeabf3ed08ca820df465828",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/framework-bundle": "2.*"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.4": "1.4.x-dev",
+                    "dev-1.5": "1.5.x-dev",
+                    "dev-1.6": "1.6.x-dev",
+                    "dev-1.7": "1.7.x-dev",
+                    "dev-1.8": "1.8.x-dev",
+                    "dev-master": "1.9.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Sonata\\jQueryBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Rabaix",
+                    "email": "thomas.rabaix@sonata-project.org",
+                    "homepage": "http://sonata-project.org"
+                },
+                {
+                    "name": "Sonata Community",
+                    "homepage": "https://github.com/sonata-project/SonatajQueryBundle/contributors"
+                }
+            ],
+            "description": "Symfony SonatajQueryBundle",
+            "homepage": "http://sonata-project.org/bundles/jquery",
+            "keywords": [
+                "jquery",
+                "sonata"
+            ],
+            "time": "2013-09-20 09:56:31"
+        },
+        {
+            "name": "sonata-project/markitup-bundle",
+            "version": "dev-master",
+            "target-dir": "Sonata/MarkItUpBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sonata-project/SonataMarkItUpBundle.git",
+                "reference": "f50ed2d543c25f0510962ac2e33d250ad8c5860c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sonata-project/SonataMarkItUpBundle/zipball/f50ed2d543c25f0510962ac2e33d250ad8c5860c",
+                "reference": "f50ed2d543c25f0510962ac2e33d250ad8c5860c",
+                "shasum": ""
+            },
+            "require": {
+                "sonata-project/jquery-bundle": "1.*"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.0": "2.0.x-dev",
+                    "dev-master": "2.1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Sonata\\MarkItUpBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Rabaix",
+                    "email": "thomas.rabaix@sonata-project.org",
+                    "homepage": "http://sonata-project.org"
+                },
+                {
+                    "name": "Jay Salvat",
+                    "homepage": "http://jaysalvat.com"
+                },
+                {
+                    "name": "Sonata Community",
+                    "homepage": "https://github.com/sonata-project/SonataMarkItUpBundle/contributors"
+                }
+            ],
+            "description": "Symfony SonataMarkItUpBundle",
+            "homepage": "http://sonata-project.org/bundles/markitup",
+            "keywords": [
+                "bbcode",
+                "editor",
+                "html",
+                "jquery",
+                "markdown",
+                "markitup",
+                "markup",
+                "sonata",
+                "textile",
+                "wiki"
+            ],
+            "time": "2013-09-23 16:26:25"
+        },
+        {
+            "name": "stfalcon/tinymce-bundle",
+            "version": "dev-master",
+            "target-dir": "Stfalcon/Bundle/TinymceBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stfalcon/TinymceBundle.git",
+                "reference": "d3c620fe787ced536044c079b112dc93c1270c28"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stfalcon/TinymceBundle/zipball/d3c620fe787ced536044c079b112dc93c1270c28",
+                "reference": "d3c620fe787ced536044c079b112dc93c1270c28",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "symfony/symfony": ">=2.1"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Stfalcon\\Bundle\\TinymceBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stepan Tanasiychuk",
+                    "email": "ceo@stfalcon.com",
+                    "homepage": "http://blog.stfalcon.com"
+                },
+                {
+                    "name": "Igor Negrutsa",
+                    "email": "progi2007@gmail.com",
+                    "homepage": "http://igor-negrutsa.info"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://github.com/stfalcon/TinymceBundle/contributors"
+                }
+            ],
+            "description": "This Bundle integrates TinyMCE WYSIWYG editor into a Symfony2 project.",
+            "keywords": [
+                "editor",
+                "tinymce",
+                "wysiwyg"
+            ],
+            "time": "2013-10-08 08:12:06"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2332,16 +2315,16 @@
         },
         {
             "name": "twig/twig",
-            "version": "v1.14.0",
+            "version": "v1.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/fabpot/Twig.git",
-                "reference": "224fc55635d544a2ec8edb3592be18db5a093f59"
+                "reference": "8873d7593ad7c120004f177c0fd01459b383c9cb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/fabpot/Twig/zipball/224fc55635d544a2ec8edb3592be18db5a093f59",
-                "reference": "224fc55635d544a2ec8edb3592be18db5a093f59",
+                "url": "https://api.github.com/repos/fabpot/Twig/zipball/8873d7593ad7c120004f177c0fd01459b383c9cb",
+                "reference": "8873d7593ad7c120004f177c0fd01459b383c9cb",
                 "shasum": ""
             },
             "require": {
@@ -2377,7 +2360,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2013-10-03 06:41:20"
+            "time": "2013-10-15 19:17:38"
         },
         {
             "name": "vich/uploader-bundle",
@@ -2449,16 +2432,16 @@
         "bmatzner/fontawesome-bundle": 20,
         "friendsofsymfony/user-bundle": 20,
         "friendsofsymfony/message-bundle": 20,
-        "payum/payum": 20,
-        "payum/payum-bundle": 20,
-        "payum/paypal-express-checkout-nvp": 20,
         "knplabs/gaufrette": 20,
         "vich/uploader-bundle": 20,
         "knplabs/knp-gaufrette-bundle": 20,
         "hwi/oauth-bundle": 20,
-        "elendev/checkout-bundle": 20,
         "liip/imagine-bundle": 20,
-        "sensio/buzz-bundle": 20
+        "sensio/buzz-bundle": 20,
+        "stfalcon/tinymce-bundle": 20,
+        "knplabs/knp-time-bundle": 20,
+        "sonata-project/jquery-bundle": 20,
+        "sonata-project/markitup-bundle": 20
     },
     "platform": {
         "php": ">=5.3.3"

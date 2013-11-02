@@ -1,7 +1,6 @@
 {% extends '::base.html.twig' %}
 
 
-
 {% block body -%}
     {% for flashMessage in app.session.flashbag.get('notice') %}
         <div class="flash-notice">
@@ -28,7 +27,6 @@
         <tbody>
         {% for entity in entities %}
             <tr>
-                <td><a href="{{ path('u__show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                 <td>{{ entity.orderId }}</td>
                 <td>{{ entity.type }}</td>
                 <td>{{ entity.discipline }}</td>
@@ -40,10 +38,7 @@
                 <td>
                 <ul>
                     <li>
-                        <a href="{{ path('u__show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('u__edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('u__show', { 'id': entity.id }) }}">details</a>
                     </li>
                 </ul>
                 </td>
